@@ -5,19 +5,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.Navigation
-import androidx.navigation.findNavController
-import com.example.latihannavigationgraph.databinding.FragmentHomeBinding
+import com.example.latihannavigationgraph.databinding.FragmentDetailCategoryBinding
 
-class HomeFragment : Fragment() {
-    private var _binding: FragmentHomeBinding? = null
+class DetailCategoryFragment : Fragment() {
+    private var _binding: FragmentDetailCategoryBinding? = null
     private val binding get() = _binding!!
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentDetailCategoryBinding.inflate(inflater, container, false)
         val view = binding.root
         return view
     }
@@ -25,12 +23,11 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.btnCategory.setOnClickListener(
-            Navigation.createNavigateOnClickListener(R.id.action_homeFragment_to_categoryFragment)
-        )
-        binding.btnProfile.setOnClickListener {view ->
-        view.findNavController().navigate(R.id.action_homeFragment_to_profileActivity)
-        }
+        val dataName = arguments?.getString(CategoryFragment.EXTRA_NAME)
+        val dataDescription = arguments?.getLong(CategoryFragment.EXTRA_STOCK)
+
+        binding.tvCategoryName.text = dataName
+        binding.tvCategoryDescription.text = "Stock: $dataDescription"
     }
 
     override fun onDestroy() {
