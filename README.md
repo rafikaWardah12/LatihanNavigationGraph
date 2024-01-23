@@ -1,4 +1,6 @@
-## Membuat navigation graph
+# Latihan Navigation Graph
+Project ini menerapkan navigation graph untuk berpindah halaman, perbedaan dalam mengirimkan data dengan bundle maupun safeArg, membuat popUp behaviourdan juga implementasi dari animasi. Teknologi yang digunakan yaitu khusus android yang menggunakan bahasa kotlin dan XML
+
 ## Implementasi
 1. Membuat Navigation Graph di direktori navigation
 2. Membuat NavHostFragment pada layout
@@ -12,7 +14,7 @@
 ## What I Learn
 1. Mengirim data dengan Bundle, menggunakan format key-value dan *key* yang diterima maupun dikirim harus sama.
 2. Mengirim data dengan SafeArg = untuk menghindari null. Apabila memakai bundle, nilai null bisa tetap muncul jika *key* yang dikirim **berbeda** dengan *key* yang diterima
-3. popUpToInclusive = true membuat fragment yang sebelumnya diakses akan dibersihkan alhasil saat tombol Back ditekan applikasi langsung keluar
+3. popUpToInclusive = true membuat fragment yang sebelumnya diakses akan dibersihkan alhasil saat tombol Back ditekan applikasi langsung keluar. Efeknya seperti Intent.FLAG_ACTIVITY_CLEAR_TOP
 4. Animasi yang dapat ditambahkan :
    * enterAnim, yaitu animasi ketika masuk.
    * exitAnim, yaitu animasi ketika keluar (berpindah ke fragment lain).
